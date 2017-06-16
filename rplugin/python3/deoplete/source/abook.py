@@ -46,7 +46,8 @@ class Source(Base):
     def get_complete_position(self, context):  # pylint: disable=R0201
         colon = self.COLON_PATTERN.search(context['input'])
         comma = self.COMMA_PATTERN.search(context['input'])
-        return max(colon.end() if colon else -1, comma.end() if comma else -1)
+        return max(colon.end() if colon is not None else -1,
+                   comma.end() if comma is not None else -1)
 
     def on_event(self, context):  # pylint: disable=W0613
         self.__make_cache()
