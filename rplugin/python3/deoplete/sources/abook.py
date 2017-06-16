@@ -3,6 +3,7 @@
 # found in the LICENSE file.
 
 import configparser
+import os.path
 import re
 
 from .base import Base  # pylint: disable=E0401
@@ -23,9 +24,12 @@ class Source(Base):
         self.min_pattern_length = 0
         self.name = 'abook'
 
-    def __make_cache(self):
+    def __make_cache(self, context):
+        datafile = context['vars'].get('deoplete#sources#abook#datafile',
+                                       os.path.expanduser('~/.abook/addressbook'))
+
         addressbook = configparser.ConfigParser()
-        addressbook.read(self.vim.eval('g:deoplete_abook_datafile'))
+        addressbook.read(datafile)
         for section in addressbook.sections():
             emails = addressbook.get(section, 'email', fallback=None)
             if emails is not None:
@@ -39,7 +43,7 @@ class Source(Base):
     def gather_candidates(self, context):
         if self.HEADER_PATTERN.search(context['input']) is not None:
             if not self.__cache:
-                self.__make_cache()
+                self.__make_cache(context)
 
             return self.__cache
 
@@ -49,7 +53,7 @@ class Source(Base):
         return max(colon.end() if colon is not None else -1,
                    comma.end() if comma is not None else -1)
 
-    def on_event(self, context):  # pylint: disable=W0613
-        self.__make_cache()
+    def on_event(self, context):
+        self.__make_cache(context)
 
 # vim: ts=4 et sw=4
