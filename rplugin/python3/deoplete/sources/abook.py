@@ -19,7 +19,7 @@ class Source(Base):
         self.__cache = []
 
         self.filetypes = ['mail']
-        self.mark = '[ABOOK]'
+        self.mark = '[abook]'
         self.matchers = ['matcher_length', 'matcher_full_fuzzy']
         self.min_pattern_length = 0
         self.name = 'abook'

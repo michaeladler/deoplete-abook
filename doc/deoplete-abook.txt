@@ -1,0 +1,61 @@
+*deoplete-abook.txt* Deoplete source for abook contacts
+
+Author: Filip Szymański <filip.szymanski@zoho.eu>
+
+==============================================================================
+CONTENTS                                             *deoplete-abook-contents*
+
+  1. Introduction                               |deoplete-abook-introduction|
+  2. Configuration                              |deoplete-abook-configuration|
+  3. License                                    |deoplete-abook-license|
+  4. Bugs                                       |deoplete-abook-bugs|
+  5. Contributing                               |deoplete-abook-contributing|
+
+==============================================================================
+INTRODUCTION                                     *deoplete-abook-introduction*
+
+This deoplete[1] source offers asynchronous completion of email addresses
+in Mutt[2] using abook[3] contacts stored in a plain text database.
+
+Note: Inspired by Greg Hurrell's[4] Vim screencast #58[5].
+
+==============================================================================
+CONFIGURATION                                   *deoplete-abook-configuration*
+
+                                           *g:deoplete#sources#abook#datafile*
+Set this option to use an alternative addressbook file.
+>
+  let g:deoplete#sources#abook#datafile = $HOME . '/path/to/addressbook'
+<
+Default: |$HOME| . '/.abook/addressbook'
+Type: string
+
+==============================================================================
+LICENSE                                               *deoplete-abook-license*
+
+MIT
+
+==============================================================================
+BUGS                                                     *deoplete-abook-bugs*
+
+If you find a bug please create an issue on GitHub.
+
+https://github.com/fszymanski/deoplete-abook/issues
+
+==============================================================================
+CONTRIBUTING                                     *deoplete-abook-contributing*
+
+Think you can make this plugin better? Awesome. Fork it on GitHub and create
+a pull request.
+
+https://github.com/fszymanski/deoplete-abook
+
+==============================================================================
+
+[1] https://github.com/Shougo/deoplete.nvim
+[2] http://www.mutt.org/
+[3] http://abook.sourceforge.net/
+[4] https://github.com/wincent
+[5] https://www.youtube.com/watch?v=BNnSjJOpXDk
+
+ vim: tw=78 ts=8 ft=help norl
