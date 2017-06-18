@@ -16,4 +16,4 @@ Plug 'fszymanski/deoplete-abook'
 
 ## Documentation
 
-For more information, see `:help deoplete-abook.txt`.
+For more information, see `:help deoplete_abook.txt`.

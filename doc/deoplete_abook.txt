@@ -25,9 +25,9 @@ CONFIGURATION                                   *deoplete-abook-configuration*
                                            *g:deoplete#sources#abook#datafile*
 Set this option to use an alternative addressbook file.
 >
-  let g:deoplete#sources#abook#datafile = $HOME . '/path/to/addressbook'
+  let g:deoplete#sources#abook#datafile = expand('~/path/to/addressbook')
 <
-Default: |$HOME| . '/.abook/addressbook'
+Default: '~/.abook/addressbook'
 Type: string
 
 ==============================================================================
