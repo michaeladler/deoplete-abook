@@ -1,4 +1,4 @@
-*deoplete-abook.txt* Deoplete source for abook contacts
+*deoplete_abook.txt* Deoplete source for abook contacts
 
 Author: Filip Szymański <filip.szymanski@zoho.eu>
 
