@@ -8,6 +8,7 @@ import re
 
 from .base import Base  # pylint: disable=E0401
 
+
 # pylint: disable=W0201,W0613
 class Source(Base):
     COLON_PATTERN = re.compile(r':\s?')
