@@ -57,7 +57,7 @@ class Source(Base):
                 name = addressbook.get(section, 'name', fallback=None)
                 for email in emails.split(','):
                     if name is not None:
-                        email = '{0} <{1}>'.format(name, email)
+                        email = '"{0}" <{1}>'.format(name, email)
 
                     self.__cache.append({'word': email})
 
